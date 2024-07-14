@@ -1,0 +1,9 @@
+**/dist
+**/build
+**/node_modules
+**/Dockerfile
+**/LICENSE
+.vscode
+.dockerignore
+.prettierignore
+.prettierrc.json
