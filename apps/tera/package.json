@@ -8,33 +8,33 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "node ./server/server.development.js",
+    "dev": "vite",
     "build": "remix vite:build",
+    "start": "node server/server.production.js",
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@fastify/middie": "^8.3.1",
-    "@fastify/static": "^7.0.4",
-    "@remix-run/node": "^2.10.2",
-    "@remix-run/react": "^2.10.2",
-    "fastify": "^4.28.1",
-    "get-port": "^7.1.0",
+    "@hono/node-server": "^1.12.0",
+    "@remix-run/node": "^2.10.3",
+    "@remix-run/react": "^2.10.3",
+    "hono": "^4.5.0",
     "http-graceful-shutdown": "^3.1.13",
-    "isbot": "^5.1.12",
+    "isbot": "^5.1.13",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "remix-server": "^0.0.2"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.10.2",
+    "@hono/vite-dev-server": "^0.13.1",
+    "@remix-run/dev": "^2.10.3",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "chalk": "^5.3.0",
     "eslint": "^8.57.0",
     "postcss": "^8.4.39",
     "postcss-preset-env": "^9.6.0",
-    "tailwindcss": "^3.4.4",
+    "tailwindcss": "^3.4.6",
     "typescript": "^5.5.3",
-    "vite": "^5.3.3",
+    "vite": "^5.3.4",
     "vite-tsconfig-paths": "^4.3.2"
   }
 }

@@ -1,3 +1,4 @@
+import devServer, { defaultOptions } from '@hono/vite-dev-server';
 import { vitePlugin as remix } from '@remix-run/dev';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -14,6 +15,14 @@ export default defineConfig({
         v3_throwAbortReason: true,
       },
     }),
+    devServer({
+      entry: 'server/server.development.js',
+      exclude: [...defaultOptions.exclude, '/assets/**', '/app/**'],
+      injectClientScript: false,
+    }),
     tsconfigPaths(),
   ],
+  server: {
+    host: '0.0.0.0',
+  },
 });

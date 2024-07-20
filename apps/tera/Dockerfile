@@ -18,7 +18,7 @@ COPY --from=deps /app/.pnpm ./.pnpm
 COPY . .
 
 RUN corepack enable pnpm && pnpm config set store-dir .pnpm && pnpm install --frozen-lockfile --offline && pnpm --filter tera build
-RUN pnpm --filter=tera --prod deploy dist
+RUN pnpm --filter tera deploy --prod dist
 
 FROM base AS runner
 WORKDIR /app
@@ -28,5 +28,6 @@ RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nodejs
 COPY --from=builder --chown=nodejs:nodejs /app/dist ./
 
 USER nodejs
+
 EXPOSE 3000
-CMD HOST=0.0.0.0 NODE_ENV=production PORT=3000 node server/server.production.js
+CMD HOST=0.0.0.0 PORT=3000 node server/server.production.js
