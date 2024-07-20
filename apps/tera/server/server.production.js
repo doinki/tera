@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { serve } from '@hono/node-server';
 import { serveStatic } from '@hono/node-server/serve-static';
 import { Hono } from 'hono';
+import { logger } from 'hono/logger';
 import gracefulShutdown from 'http-graceful-shutdown';
 import { createRequestHandler } from 'remix-server/hono';
 
@@ -33,6 +34,7 @@ app.use((c, next) => {
   })(c, next);
 });
 
+app.use(logger());
 app.use(
   createRequestHandler({ build: await import('../build/server/index.js') }),
 );
