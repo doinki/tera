@@ -9,6 +9,8 @@ import {
 } from '@remix-run/react';
 import { type ReactNode } from 'react';
 
+import { ThemeScript } from './components/ThemeScript';
+
 export function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="ko">
@@ -17,6 +19,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <ThemeScript />
       </head>
       <body>
         {children}
