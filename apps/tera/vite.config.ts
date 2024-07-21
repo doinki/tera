@@ -17,7 +17,7 @@ export default defineConfig({
     }),
     devServer({
       entry: 'server/server.development.js',
-      exclude: [...defaultOptions.exclude, '/assets/**', '/app/**'],
+      exclude: [...defaultOptions.exclude, /^\/app\/.*/, /.*\.png$/],
       injectClientScript: false,
     }),
     tsconfigPaths(),
