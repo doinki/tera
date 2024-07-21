@@ -1,4 +1,4 @@
-import './index.css';
+import './ThemeSwitch.css';
 
 import {
   type ButtonHTMLAttributes,

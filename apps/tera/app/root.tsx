@@ -9,8 +9,9 @@ import {
 } from '@remix-run/react';
 import { type ReactNode } from 'react';
 
+import { Footer } from './components/Footer';
 import { Header } from './components/Header';
-import { ThemeScript } from './components/ThemeScript';
+import { ThemeScript } from './components/ThemeSwitch';
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
@@ -33,6 +34,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <body>
         <Header />
         {children}
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>
