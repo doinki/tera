@@ -42,14 +42,19 @@ app.use(
 const hostname = process.env.HOST || 'localhost';
 const port = Number(process.env.PORT) || 3000;
 
-const server = serve({
-  fetch: app.fetch,
-  hostname,
-  port,
-});
+const server = serve(
+  {
+    fetch: app.fetch,
+    hostname,
+    port,
+  },
+  () => {
+    process.send?.('ready');
+  },
+);
 
 server.keepAliveTimeout = 65000;
 
 gracefulShutdown(server, {
-  timeout: 10000,
+  timeout: 5000,
 });
