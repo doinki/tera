@@ -1,3 +1,4 @@
+import '@fontsource-variable/noto-sans-kr';
 import './tailwind.css';
 
 import {
