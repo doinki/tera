@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 (function () {
   var THEME = 'theme';
   var DARK = 'dark';

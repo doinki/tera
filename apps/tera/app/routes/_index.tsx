@@ -1,26 +1,23 @@
 import { type MetaFunction } from '@remix-run/react';
 
-import { ThemeSwitch } from '~/components/ThemeSwitch';
-
 export const meta: MetaFunction = () => {
   return [
     { title: 'New Remix App' },
-    { name: 'description', content: 'Welcome to Remix!' },
+    { content: 'Welcome to Remix!', name: 'description' },
   ];
 };
 
 export default function Page() {
   return (
-    <div className="font-sans p-4">
-      <ThemeSwitch className="size-8" />
+    <div className="p-4 font-sans">
       <h1 className="text-3xl">Welcome to Remix</h1>
-      <ul className="list-disc mt-4 pl-6 space-y-2">
+      <ul className="mt-4 list-disc space-y-2 pl-6">
         <li>
           <a
             className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
             href="https://remix.run/start/quickstart"
             rel="noreferrer"
+            target="_blank"
           >
             5m Quick Start
           </a>
@@ -28,9 +25,9 @@ export default function Page() {
         <li>
           <a
             className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
             href="https://remix.run/start/tutorial"
             rel="noreferrer"
+            target="_blank"
           >
             30m Tutorial
           </a>
@@ -38,9 +35,9 @@ export default function Page() {
         <li>
           <a
             className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
             href="https://remix.run/docs"
             rel="noreferrer"
+            target="_blank"
           >
             Remix Docs
           </a>

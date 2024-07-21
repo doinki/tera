@@ -11,25 +11,25 @@
     "dev": "vite",
     "build": "remix vite:build",
     "start": "node server/server.production.js",
+    "lint": "eslint --cache --cache-location ../../node_modules/.cache/eslint-tera --ignore-path ../../.gitignore .",
     "typecheck": "tsc"
   },
   "dependencies": {
     "@hono/node-server": "^1.12.0",
     "@remix-run/node": "^2.10.3",
     "@remix-run/react": "^2.10.3",
-    "hono": "^4.5.0",
+    "hono": "^4.5.1",
     "http-graceful-shutdown": "^3.1.13",
     "isbot": "^5.1.13",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "remix-server": "^0.0.2"
+    "remix-server": "^0.1.0"
   },
   "devDependencies": {
     "@hono/vite-dev-server": "^0.13.1",
     "@remix-run/dev": "^2.10.3",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "eslint": "^8.57.0",
     "postcss": "^8.4.39",
     "postcss-preset-env": "^9.6.0",
     "tailwindcss": "^3.4.6",

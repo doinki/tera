@@ -17,7 +17,7 @@ process.chdir(join(__dirname, '..'));
 const app = new Hono();
 
 app.use((c, next) => {
-  const path = c.req.path;
+  const { path } = c.req;
 
   if (!path.includes('.')) {
     return next();
@@ -36,6 +36,7 @@ app.use((c, next) => {
 
 app.use(logger());
 app.use(
+  // eslint-disable-next-line import/extensions
   createRequestHandler({ build: await import('../build/server/index.js') }),
 );
 

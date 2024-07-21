@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function useIsMounted(): boolean {
   const [isMounted, setIsMounted] = useState(false);

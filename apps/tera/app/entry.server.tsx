@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 /**
  * By default, Remix will handle generating the HTTP Response for you.
  * You are free to delete this file if you'd like to, but if you ever want it revealed again, you can run `npx remix reveal` ✨
@@ -6,8 +8,11 @@
 
 import { PassThrough } from 'node:stream';
 
-import type { AppLoadContext, EntryContext } from '@remix-run/node';
-import { createReadableStreamFromReadable } from '@remix-run/node';
+import {
+  type AppLoadContext,
+  createReadableStreamFromReadable,
+  type EntryContext,
+} from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
 import { isbot } from 'isbot';
 import { renderToPipeableStream } from 'react-dom/server';
@@ -47,11 +52,11 @@ function handleBotRequest(
 ) {
   return new Promise((resolve, reject) => {
     let shellRendered = false;
-    const { pipe, abort } = renderToPipeableStream(
+    const { abort, pipe } = renderToPipeableStream(
       <RemixServer
+        abortDelay={ABORT_DELAY}
         context={remixContext}
         url={request.url}
-        abortDelay={ABORT_DELAY}
       />,
       {
         onAllReady() {
@@ -70,9 +75,6 @@ function handleBotRequest(
 
           pipe(body);
         },
-        onShellError(error: unknown) {
-          reject(error);
-        },
         onError(error: unknown) {
           responseStatusCode = 500;
           // Log streaming rendering errors from inside the shell.  Don't log
@@ -81,6 +83,9 @@ function handleBotRequest(
           if (shellRendered) {
             console.error(error);
           }
+        },
+        onShellError(error: unknown) {
+          reject(error);
         },
       },
     );
@@ -97,13 +102,25 @@ function handleBrowserRequest(
 ) {
   return new Promise((resolve, reject) => {
     let shellRendered = false;
-    const { pipe, abort } = renderToPipeableStream(
+    const { abort, pipe } = renderToPipeableStream(
       <RemixServer
+        abortDelay={ABORT_DELAY}
         context={remixContext}
         url={request.url}
-        abortDelay={ABORT_DELAY}
       />,
       {
+        onError(error: unknown) {
+          responseStatusCode = 500;
+          // Log streaming rendering errors from inside the shell.  Don't log
+          // errors encountered during initial shell rendering since they'll
+          // reject and get logged in handleDocumentRequest.
+          if (shellRendered) {
+            console.error(error);
+          }
+        },
+        onShellError(error: unknown) {
+          reject(error);
+        },
         onShellReady() {
           shellRendered = true;
           const body = new PassThrough();
@@ -119,18 +136,6 @@ function handleBrowserRequest(
           );
 
           pipe(body);
-        },
-        onShellError(error: unknown) {
-          reject(error);
-        },
-        onError(error: unknown) {
-          responseStatusCode = 500;
-          // Log streaming rendering errors from inside the shell.  Don't log
-          // errors encountered during initial shell rendering since they'll
-          // reject and get logged in handleDocumentRequest.
-          if (shellRendered) {
-            console.error(error);
-          }
         },
       },
     );

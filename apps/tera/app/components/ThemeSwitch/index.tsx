@@ -22,7 +22,7 @@ const DARK = 'dark';
 
 export const ThemeSwitch = forwardRef<HTMLButtonElement, ThemeSwitchProps>(
   (props, ref) => {
-    const { className, onClick, onChange, ...other } = props;
+    const { className, onChange, onClick, ...other } = props;
 
     const id = useId();
     const [theme, setTheme] = useState<Theme>(LIGHT);
