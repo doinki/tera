@@ -9,7 +9,6 @@ export function Footer() {
 
       <a
         aria-label="GitHub"
-        className="rounded-full"
         href="https://github.com/doinki/tera"
         rel="noreferrer"
         target="_blank"
