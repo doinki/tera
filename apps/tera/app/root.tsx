@@ -32,7 +32,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <Links />
         <ThemeScript />
       </head>
-      <body>
+      <body className="mx-auto max-w-3xl">
         <Header />
         {children}
         <Footer />
