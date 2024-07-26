@@ -1,6 +1,7 @@
 import '@fontsource-variable/noto-sans-kr';
 import './tailwind.css';
 
+import { type HeadersFunction } from '@remix-run/node';
 import {
   Links,
   Meta,
@@ -13,6 +14,10 @@ import { type ReactNode } from 'react';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { ThemeScript } from './components/ThemeSwitch';
+
+export const headers: HeadersFunction = () => ({
+  'Cache-Control': 'max-age=300',
+});
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
@@ -28,14 +33,16 @@ export function Layout({ children }: { children: ReactNode }) {
           rel="apple-touch-icon"
           sizes="180x180"
         />
+        <title>Tera</title>
+        <meta content="Welcome to Tera!" name="description" />
         <Meta />
         <Links />
         <ThemeScript />
       </head>
-      <body className="mx-auto max-w-3xl">
+      <body>
         <Header />
         {children}
-        <Footer />
+        <Footer className="mt-6" />
         <ScrollRestoration />
         <Scripts />
       </body>

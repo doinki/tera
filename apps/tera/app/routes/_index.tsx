@@ -1,12 +1,5 @@
-import { type MetaFunction } from '@remix-run/react';
+import Page from './pages.$page';
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: 'Tera' },
-    { content: 'Welcome to Tera!', name: 'description' },
-  ];
-};
+export { loader } from './pages.$page';
 
-export default function Page() {
-  return <div />;
-}
+export default Page;

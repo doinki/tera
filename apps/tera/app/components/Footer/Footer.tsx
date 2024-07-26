@@ -1,8 +1,16 @@
+import { twJoin } from 'tailwind-merge';
+
 import { GitHub } from '../icons/GitHub';
 
-export function Footer() {
+export interface FooterProps {
+  className?: string;
+}
+
+export function Footer({ className }: FooterProps) {
   return (
-    <footer className="grid justify-items-center gap-2 p-4">
+    <footer
+      className={twJoin('grid justify-items-center gap-2 p-4', className)}
+    >
       <cite>
         &copy; {new Date().getFullYear()} doinki. All rights reserved.
       </cite>
