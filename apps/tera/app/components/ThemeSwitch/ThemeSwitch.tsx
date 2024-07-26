@@ -1,14 +1,11 @@
 import './ThemeSwitch.css';
 
-import {
-  type ButtonHTMLAttributes,
-  forwardRef,
-  useEffect,
-  useId,
-  useState,
-} from 'react';
+import { type ButtonHTMLAttributes, forwardRef, useId } from 'react';
 
 import { useIsMounted } from '~/hooks/useIsMounted';
+
+import { DARK, LIGHT } from './theme';
+import { useTheme } from './useTheme';
 
 export type Theme = 'light' | 'dark';
 
@@ -17,22 +14,13 @@ export interface ThemeSwitchProps
   onChange?: (theme: Theme) => void;
 }
 
-const LIGHT = 'light';
-const DARK = 'dark';
-
 export const ThemeSwitch = forwardRef<HTMLButtonElement, ThemeSwitchProps>(
   (props, ref) => {
     const { className, onChange, onClick, ...other } = props;
 
     const id = useId();
-    const [theme, setTheme] = useState<Theme>(LIGHT);
     const isMounted = useIsMounted();
-
-    useEffect(() => {
-      if (document.documentElement.classList.contains(DARK)) {
-        setTheme(DARK);
-      }
-    }, []);
+    const theme = useTheme();
 
     return (
       <button
@@ -43,16 +31,11 @@ export const ThemeSwitch = forwardRef<HTMLButtonElement, ThemeSwitchProps>(
         title="Theme Switch"
         type="button"
         onClick={(e) => {
-          if (theme === DARK) {
-            window.__setPreferredTheme(LIGHT);
-            setTheme(LIGHT);
-          } else {
-            window.__setPreferredTheme(DARK);
-            setTheme(DARK);
-          }
+          const preferredTheme = theme === DARK ? LIGHT : DARK;
 
+          window.__setPreferredTheme(preferredTheme);
           onClick?.(e);
-          onChange?.(theme);
+          onChange?.(preferredTheme);
         }}
         {...other}
       >
