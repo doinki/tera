@@ -9,17 +9,17 @@ import { POSTS_DEFAULT_SIZE } from '~/constants/post';
 export const loader = (async (request) => {
   const page = request.params.page ? Number(request.params.page) : 1;
 
+  invariant(!Number.isNaN(page), 'Bad Request');
   invariant(page > 0, 'Bad Request');
 
-  const res = await PostApi.getPosts({ page });
+  const data = await PostApi.getPosts({ page });
 
-  invariant(!res.error, 'Something went wrong.');
-  invariant(res.count !== null, 'Something went wrong.');
-
-  invariant(page <= Math.ceil(res.count / POSTS_DEFAULT_SIZE), 'Bad Request');
+  invariant(!data.error, 'Something went wrong.');
+  invariant(data.count !== null, 'Something went wrong.');
+  invariant(page <= Math.ceil(data.count / POSTS_DEFAULT_SIZE), 'Bad Request');
 
   return json({
-    data: res.data,
+    data: data.data,
   });
 }) satisfies LoaderFunction;
 

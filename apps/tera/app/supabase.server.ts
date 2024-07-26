@@ -22,12 +22,13 @@ export type Database = {
     Tables: {
       post: {
         Insert: {
-          company?: string;
+          company: string;
           created_at?: string;
-          date?: string;
+          date: string;
           description?: string | null;
           id?: string;
-          title?: string;
+          title: string;
+          url: string;
         };
         Relationships: [];
         Row: {
@@ -37,6 +38,7 @@ export type Database = {
           description: string | null;
           id: string;
           title: string;
+          url: string;
         };
         Update: {
           company?: string;
@@ -45,6 +47,7 @@ export type Database = {
           description?: string | null;
           id?: string;
           title?: string;
+          url?: string;
         };
       };
     };
