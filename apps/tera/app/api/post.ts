@@ -1,4 +1,4 @@
-import { POSTS_DEFAULT_SIZE } from '~/constants/post';
+import { DEFAULT_SIZE } from '~/constants/post';
 import { supabase } from '~/supabase.server';
 
 export interface GetPostsParams {
@@ -6,13 +6,23 @@ export interface GetPostsParams {
   size?: number;
 }
 
-export function getPosts({
+export async function getPosts({
   page = 0,
-  size = POSTS_DEFAULT_SIZE,
+  size = DEFAULT_SIZE,
 }: GetPostsParams = {}) {
-  return supabase
+  const data = await supabase
     .from('post')
     .select('*', { count: 'exact' })
     .order('date', { ascending: false })
     .range(page * size, (page + 1) * size - 1);
+
+  if (data.error) {
+    throw data.error;
+  }
+
+  if (data.count === null) {
+    throw new Error('Count is null.');
+  }
+
+  return data;
 }

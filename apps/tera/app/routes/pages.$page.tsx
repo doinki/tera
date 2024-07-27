@@ -1,22 +1,28 @@
-import { invariant } from '@mado/invariant';
+import { invariantResponse } from '@mado/invariant';
 import { type LoaderFunction } from '@remix-run/node';
 import { json, useLoaderData } from '@remix-run/react';
 
 import { PostApi } from '~/api';
 import { Post } from '~/components/Post';
-import { POSTS_DEFAULT_SIZE } from '~/constants/post';
+import { DEFAULT_PAGE, DEFAULT_SIZE } from '~/constants/post';
+import { getTotalPages, isValidPage } from '~/utils/post';
 
 export const loader = (async (request) => {
-  const page = request.params.page ? Number(request.params.page) : 1;
+  const page = request.params.page
+    ? Number(request.params.page) - 1
+    : DEFAULT_PAGE;
 
-  invariant(!Number.isNaN(page), 'Bad Request');
-  invariant(page > 0, 'Bad Request');
+  invariantResponse(isValidPage(page, DEFAULT_PAGE), 'Bad Request', {
+    status: 404,
+  });
 
   const data = await PostApi.getPosts({ page });
 
-  invariant(!data.error, 'Something went wrong.');
-  invariant(data.count !== null, 'Something went wrong.');
-  invariant(page <= Math.ceil(data.count / POSTS_DEFAULT_SIZE), 'Bad Request');
+  invariantResponse(
+    isValidPage(page, DEFAULT_PAGE, getTotalPages(data.count!, DEFAULT_SIZE)),
+    'Bad Request',
+    { status: 404 },
+  );
 
   return json({
     data: data.data,

@@ -13,7 +13,12 @@ export const Post = memo(
     return (
       <article className="py-[1em]">
         <h2 className="mt-0">
-          <a href={url} rel="noreferrer" target="_blank">
+          <a
+            className="underline-offset-4"
+            href={url}
+            rel="noreferrer"
+            target="_blank"
+          >
             {title}
           </a>
         </h2>
