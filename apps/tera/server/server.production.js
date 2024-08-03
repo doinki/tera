@@ -28,7 +28,7 @@ app.use((c, next) => {
   if (path.substring(0, 8) === '/assets/') {
     c.header('Cache-Control', 'public, max-age=31556926, immutable');
   } else {
-    c.header('Cache-Control', 'public, max-age=86400');
+    c.header('Cache-Control', 'public, max-age=3600');
   }
 
   return serveStatic({

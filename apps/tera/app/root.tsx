@@ -42,7 +42,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <body>
         <Header />
         {children}
-        <Footer className="mt-6" />
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>

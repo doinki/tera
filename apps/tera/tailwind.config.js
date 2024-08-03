@@ -1,4 +1,3 @@
-import typography from '@tailwindcss/typography';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 
 /**
@@ -7,7 +6,6 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
 export default {
   content: ['./app/**/*.{ts,tsx}'],
   darkMode: 'class',
-  plugins: [typography],
   theme: {
     extend: {
       fontFamily: {

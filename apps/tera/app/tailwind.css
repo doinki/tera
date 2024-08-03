@@ -9,8 +9,4 @@
   html.dark {
     color-scheme: dark;
   }
-
-  body {
-    @apply mx-auto max-w-xl;
-  }
 }
