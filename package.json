@@ -1,7 +1,7 @@
 {
   "name": "tera",
   "private": true,
-  "packageManager": "pnpm@9.6.0",
+  "packageManager": "pnpm@9.7.1",
   "devDependencies": {
     "eslint": "^8.57.0",
     "eslint-config-mado": "^0.3.1",

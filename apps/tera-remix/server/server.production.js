@@ -7,8 +7,8 @@ import { serve } from '@hono/node-server';
 import { serveStatic } from '@hono/node-server/serve-static';
 import { Hono } from 'hono';
 import { logger } from 'hono/logger';
-import gracefulShutdown from 'http-graceful-shutdown';
 import { createRequestHandler } from 'remix-server/hono';
+import { gracefulShutdown } from 'server.close';
 
 process.env.NODE_ENV = 'production';
 
@@ -42,7 +42,7 @@ app.use(
   createRequestHandler({ build: await import('../build/server/index.js') }),
 );
 
-const hostname = process.env.HOST || 'localhost';
+const hostname = process.env.HOST || '0.0.0.0';
 const port = Number(process.env.PORT) || 3000;
 
 const server = serve(
@@ -58,6 +58,4 @@ const server = serve(
 
 server.keepAliveTimeout = 65000;
 
-gracefulShutdown(server, {
-  timeout: 5000,
-});
+gracefulShutdown(server);
