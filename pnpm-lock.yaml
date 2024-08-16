@@ -63,8 +63,8 @@ importers:
         specifier: ^0.2.0
         version: 0.2.0(@remix-run/node@2.11.2(typescript@5.5.4))(@remix-run/server-runtime@2.11.2(typescript@5.5.4))(hono@4.5.5)
       server.close:
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: ^0.0.2
+        version: 0.0.2
       tailwind-merge:
         specifier: ^2.5.2
         version: 2.5.2
@@ -1073,7 +1073,7 @@ packages:
     resolution: {integrity: sha512-n8oxjeb5aIbPFEtmQxQYOLI0i9n5ySBEY/ZEHHZqKQSFnxio1rv6dthascc9dLuwrL0RC5mPCxB7vnAVGAYWAQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
-      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+      eslint: 8.57.0
 
   '@typescript-eslint/utils@7.18.0':
     resolution: {integrity: sha512-kK0/rNa2j74XuHVcoCZxdFBMF+aq/vH83CXAOHieC+2Gis4mF8jJXT5eAfyD3K0sAxtPuwxaIOIOvhwzVDt/kw==}
@@ -1596,8 +1596,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.8:
-    resolution: {integrity: sha512-4Nx0gP2tPNBLTrFxBMHpkQbtn2hidPVr/+/FTtcCiBYTucqc70zRyVZiOLj17Ui3wTO7SQ1/N+hkHYzJjBzt6A==}
+  electron-to-chromium@1.5.9:
+    resolution: {integrity: sha512-HfkT8ndXR0SEkU8gBQQM3rz035bpE/hxkZ1YIt4KJPEFES68HfIU6LzKukH0H794Lm83WJtkSAMfEToxCs15VA==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -3470,8 +3470,8 @@ packages:
     resolution: {integrity: sha512-XGuRDNjXUijsUL0vl6nSD7cwURuzEgglbOaFuZM9g3kwDXOWVTck0jLzjPzGD+TazWbboZYu52/9/XPdUgne9g==}
     engines: {node: '>= 0.8.0'}
 
-  server.close@0.0.1:
-    resolution: {integrity: sha512-/UQYZStKwaedt77B/Zy/Cyt4pfO5rED05ztig3kY9gtBLPiEo/Rbj26f1JmK88UY4a0bvDBgTT+O7rxnnQ+IUg==}
+  server.close@0.0.2:
+    resolution: {integrity: sha512-+8s4L2IJI6rtE92FPzQJAUJdqcUym4mpEY5jNO+gXyXGznhRoHIOYhdib207fZiKgi5TeAtYMyTNVvXQG/knFQ==}
 
   set-cookie-parser@2.7.0:
     resolution: {integrity: sha512-lXLOiqpkUumhRdFF3k1osNXCy9akgx/dyPZ5p8qAg9seJzXr5ZrlqZuWIMuY6ejOsVLE6flJ5/h3lsn57fQ/PQ==}
@@ -5386,7 +5386,7 @@ snapshots:
   browserslist@4.23.3:
     dependencies:
       caniuse-lite: 1.0.30001651
-      electron-to-chromium: 1.5.8
+      electron-to-chromium: 1.5.9
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
 
@@ -5676,7 +5676,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.8: {}
+  electron-to-chromium@1.5.9: {}
 
   emoji-regex@8.0.0: {}
 
@@ -8044,7 +8044,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  server.close@0.0.1: {}
+  server.close@0.0.2: {}
 
   set-cookie-parser@2.7.0: {}
 

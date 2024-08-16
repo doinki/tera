@@ -27,7 +27,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "remix-server": "^0.2.0",
-    "server.close": "^0.0.1",
+    "server.close": "^0.0.2",
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
