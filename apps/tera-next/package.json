@@ -1,6 +1,7 @@
 {
   "name": "@tera/next",
   "private": true,
+  "sideEffects": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
