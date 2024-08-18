@@ -10,8 +10,7 @@
   "devDependencies": {
     "@types/node": "^22.4.0",
     "eslint": "^8.57.0",
-    "eslint-config-mado": "^0.3.1",
-    "eslint-plugin-storybook": "^0.8.0",
+    "eslint-config-mado": "^0.4.2",
     "prettier": "^3.3.3",
     "typescript": "^5.5.4"
   },

@@ -2,7 +2,7 @@
  * @type {import('eslint').Linter.Config}
  */
 module.exports = {
-  extends: ['mado', 'mado/tailwindcss', 'plugin:@next/next/recommended'],
+  extends: ['mado', 'mado/tailwindcss', 'mado/next'],
   parserOptions: {
     project: require.resolve('./tsconfig.json'),
   },
