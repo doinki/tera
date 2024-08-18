@@ -2,7 +2,7 @@
  * @type {import('eslint').Linter.Config}
  */
 module.exports = {
-  extends: ['mado', 'mado/tailwindcss'],
+  extends: ['mado', 'mado/tailwindcss', 'plugin:storybook/recommended'],
   parserOptions: {
     project: require.resolve('./tsconfig.json'),
   },

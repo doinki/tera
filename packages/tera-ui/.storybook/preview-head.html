@@ -1,0 +1,68 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+  rel="stylesheet"
+/>
+
+<style>
+  html {
+    font-family:
+      Noto Sans KR,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Ubuntu,
+      Cantarell,
+      Noto Sans,
+      sans-serif,
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
+      Segoe UI Symbol,
+      'Noto Color Emoji';
+  }
+</style>
+
+<script>
+  (function () {
+    var THEME = 'theme';
+    var DARK = 'dark';
+    var LIGHT = 'light';
+
+    var preferredTheme;
+    try {
+      preferredTheme = localStorage.getItem(THEME);
+    } catch (error) {}
+
+    var darkMediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+
+    setTheme(preferredTheme || (darkMediaQueryList.matches ? DARK : LIGHT));
+
+    darkMediaQueryList.addListener(function (e) {
+      if (!preferredTheme) {
+        setTheme(e.matches ? DARK : LIGHT);
+      }
+    });
+
+    function setTheme(newTheme) {
+      window.__theme = newTheme;
+
+      if (newTheme === DARK) {
+        document.documentElement.classList.add(DARK);
+      } else if (newTheme === LIGHT) {
+        document.documentElement.classList.remove(DARK);
+      }
+    }
+
+    window.__setPreferredTheme = function (newTheme) {
+      preferredTheme = newTheme;
+      setTheme(newTheme);
+
+      try {
+        localStorage.setItem(THEME, newTheme);
+      } catch (error) {}
+    };
+  })();
+</script>

@@ -7,6 +7,8 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build:storybook": "storybook build",
     "lint": "eslint --cache --cache-location ../../node_modules/.cache/eslint-tera-ui --ignore-path ../../.gitignore .",
     "typecheck": "tsc"
   },
@@ -20,6 +22,11 @@
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^8.2.9",
+    "@storybook/addon-links": "^8.2.9",
+    "@storybook/blocks": "^8.2.9",
+    "@storybook/react": "^8.2.9",
+    "@storybook/react-vite": "^8.2.9",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "postcss": "^8.4.41",

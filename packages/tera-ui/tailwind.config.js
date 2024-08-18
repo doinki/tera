@@ -1,16 +1,7 @@
-import { fontFamily } from 'tailwindcss/defaultTheme';
-
 /**
  * @type {import('tailwindcss').Config}
  */
 export default {
-  content: ['./app/**/*.{ts,tsx}'],
+  content: ['./src/**/*.{ts,tsx}', './story/**/*.{ts,tsx}'],
   darkMode: 'class',
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Noto Sans KR Variable', ...fontFamily.sans],
-      },
-    },
-  },
 };
