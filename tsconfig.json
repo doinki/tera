@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@tera/icons": ["./packages/tera-icons/src/index.ts"],
+      "@tera/ui": ["./packages/tera-ui/src/index.ts"]
+    }
+  }
+}

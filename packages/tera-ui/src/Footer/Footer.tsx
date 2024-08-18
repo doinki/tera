@@ -1,6 +1,5 @@
+import { GitHub } from '@tera/icons';
 import { twJoin } from 'tailwind-merge';
-
-import { GitHub } from '../icons/GitHub';
 
 export interface FooterProps {
   className?: string;

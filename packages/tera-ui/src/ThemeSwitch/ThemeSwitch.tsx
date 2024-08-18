@@ -1,13 +1,16 @@
 import './ThemeSwitch.css';
 
+import { useIsMounted } from '@mado/hooks';
 import { type ButtonHTMLAttributes, forwardRef, useId } from 'react';
 
-import { useIsMounted } from '~/hooks/useIsMounted';
-
-import { DARK, LIGHT } from './theme';
+import { DARK, LIGHT, type Theme } from './theme';
 import { useTheme } from './useTheme';
 
-export type Theme = 'light' | 'dark';
+declare global {
+  interface Window {
+    __setPreferredTheme: (theme: 'light' | 'dark') => void;
+  }
+}
 
 export interface ThemeSwitchProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onChange'> {

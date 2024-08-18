@@ -3,17 +3,15 @@ import './tailwind.css';
 
 import { type HeadersFunction } from '@remix-run/node';
 import {
+  Link,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+import { Footer, Header, ThemeScript } from '@tera/ui';
 import { type ReactNode } from 'react';
-
-import { Footer } from './components/Footer';
-import { Header } from './components/Header';
-import { ThemeScript } from './components/ThemeSwitch';
 
 export const headers: HeadersFunction = () => ({
   'Cache-Control': 'max-age=300',
@@ -40,7 +38,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <ThemeScript />
       </head>
       <body>
-        <Header />
+        <Header Link={Link} />
         {children}
         <Footer />
         <ScrollRestoration />
