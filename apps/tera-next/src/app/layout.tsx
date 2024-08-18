@@ -1,7 +1,9 @@
 import './tailwind.css';
 
+import { Footer, Header, ThemeScript } from '@tera/ui';
 import { type Metadata, type Viewport } from 'next';
 import { Noto_Sans_KR } from 'next/font/google';
+import Link from 'next/link';
 
 const notoSansKr = Noto_Sans_KR({
   adjustFontFallback: false,
@@ -41,7 +43,14 @@ export default function Layout({
 }>) {
   return (
     <html className={notoSansKr.variable} lang="ko">
-      <body>{children}</body>
+      <head>
+        <ThemeScript />
+      </head>
+      <body>
+        <Header Link={Link} />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

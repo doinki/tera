@@ -4,7 +4,7 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
  * @type {import('tailwindcss').Config}
  */
 export default {
-  content: ['./app/**/*.{ts,tsx}'],
+  content: ['../../packages/tera-ui/src/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {

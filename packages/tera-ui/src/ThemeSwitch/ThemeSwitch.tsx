@@ -1,3 +1,5 @@
+'use client';
+
 import './ThemeSwitch.css';
 
 import { useIsMounted } from '@mado/hooks';

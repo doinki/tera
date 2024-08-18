@@ -1,7 +1,8 @@
+'use client';
+
 import { useSyncExternalStore } from 'react';
 
-import { DARK, LIGHT } from './theme';
-import { type Theme } from './ThemeSwitch';
+import { DARK, LIGHT, type Theme } from './theme';
 
 function subscribe(onStoreChange: () => void) {
   const observer = new MutationObserver((mutations) => {
