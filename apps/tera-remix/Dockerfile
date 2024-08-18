@@ -17,8 +17,8 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/.pnpm ./.pnpm
 COPY . .
 
-RUN corepack enable pnpm && pnpm config set store-dir .pnpm && pnpm install --frozen-lockfile --offline && pnpm --filter tera build
-RUN pnpm --filter tera deploy --prod dist
+RUN corepack enable pnpm && pnpm config set store-dir .pnpm && pnpm install --frozen-lockfile --offline
+RUN pnpm --filter remix build && pnpm --filter remix deploy --prod dist
 
 FROM base AS runner
 WORKDIR /app
