@@ -6,6 +6,21 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig(({ isSsrBuild }) => {
   return {
     build: {
+      rollupOptions: {
+        output: isSsrBuild
+          ? undefined
+          : {
+              // eslint-disable-next-line consistent-return
+              manualChunks: (id) => {
+                if (id.includes('.pnpm/react@')) {
+                  return 'react';
+                }
+                if (id.includes('.pnpm/react-dom@')) {
+                  return 'react-dom';
+                }
+              },
+            },
+      },
       target: isSsrBuild
         ? 'node22'
         : ['chrome89', 'edge89', 'safari15', 'firefox89'],
