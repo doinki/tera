@@ -8,6 +8,7 @@
     "typecheck": "pnpm -r typecheck"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.8",
     "@types/node": "^22.5.5",
     "eslint": "^8.57.1",
     "eslint-config-mado": "^0.4.2",
