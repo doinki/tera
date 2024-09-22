@@ -6,7 +6,6 @@ import { fileURLToPath } from 'node:url';
 import { serve } from '@hono/node-server';
 import { serveStatic } from '@hono/node-server/serve-static';
 import { Hono } from 'hono';
-import { compress } from 'hono/compress';
 import { logger } from 'hono/logger';
 import { createRequestHandler } from 'remix-server/hono';
 import { gracefulShutdown } from 'server.close';
@@ -19,7 +18,6 @@ process.chdir(join(__dirname, '..'));
 
 const app = new Hono();
 
-app.use(compress());
 app.use((c, next) => {
   const { path } = c.req;
 
