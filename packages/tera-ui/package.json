@@ -19,18 +19,18 @@
   "dependencies": {
     "@mado/hooks": "^0.4.0",
     "@tera/icons": "workspace:^",
-    "tailwind-merge": "^2.5.2"
+    "tailwind-merge": "^2.5.3"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^8.3.4",
-    "@storybook/addon-links": "^8.3.4",
-    "@storybook/blocks": "^8.3.4",
-    "@storybook/react": "^8.3.4",
-    "@storybook/react-vite": "^8.3.4",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-links": "^8.3.5",
+    "@storybook/blocks": "^8.3.5",
+    "@storybook/react": "^8.3.5",
+    "@storybook/react-vite": "^8.3.5",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "postcss": "^8.4.47",
-    "postcss-preset-env": "^10.0.5",
+    "postcss-preset-env": "^10.0.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.13",

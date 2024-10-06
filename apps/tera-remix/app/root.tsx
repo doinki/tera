@@ -11,6 +11,7 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import { Footer, Header, ThemeScript } from '@tera/ui';
+import { Outlined } from 'outlined';
 import { type ReactNode } from 'react';
 
 export const headers: HeadersFunction = () => ({
@@ -47,6 +48,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <ThemeScript />
       </head>
       <body>
+        {import.meta.env.DEV && <Outlined />}
         <Header Link={Link} />
         {children}
         <Footer />
