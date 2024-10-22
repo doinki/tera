@@ -36,15 +36,19 @@ export function Layout({ children }: { children: ReactNode }) {
         <meta content="Welcome to Tera!" name="description" />
         <Meta />
         <Links />
-        <script
-          src="https://www.googletagmanager.com/gtag/js?id=G-PW50MG903L"
-          async
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","G-PW50MG903L");`,
-          }}
-        />
+        {import.meta.env.PROD && (
+          <>
+            <script
+              src="https://www.googletagmanager.com/gtag/js?id=G-PW50MG903L"
+              async
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","G-PW50MG903L");`,
+              }}
+            />
+          </>
+        )}
         <ThemeScript />
       </head>
       <body>
