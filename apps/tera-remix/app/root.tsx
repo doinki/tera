@@ -11,6 +11,7 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import { Footer, Header, ThemeScript } from '@tera/ui';
+import { ModoruScript } from 'modoru';
 import { Outlined } from 'outlined';
 import { type ReactNode } from 'react';
 
@@ -50,6 +51,7 @@ export function Layout({ children }: { children: ReactNode }) {
           </>
         )}
         <ThemeScript />
+        <ModoruScript />
       </head>
       <body>
         {import.meta.env.DEV && <Outlined />}

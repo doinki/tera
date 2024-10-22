@@ -1,6 +1,7 @@
 import './tailwind.css';
 
 import { Footer, Header, ThemeScript } from '@tera/ui';
+import { ModoruScript } from 'modoru';
 import { type Metadata, type Viewport } from 'next';
 import { Noto_Sans_KR } from 'next/font/google';
 import Link from 'next/link';
@@ -45,6 +46,7 @@ export default function Layout({
     <html className={notoSansKr.variable} lang="ko">
       <head>
         <ThemeScript />
+        <ModoruScript />
       </head>
       <body>
         <Header Link={Link} />

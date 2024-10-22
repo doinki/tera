@@ -35,6 +35,9 @@ importers:
       '@tera/ui':
         specifier: workspace:^
         version: link:../../packages/tera-ui
+      modoru:
+        specifier: ^0.0.3
+        version: 0.0.3(react@19.0.0-rc-65a56d0e-20241020)
       next:
         specifier: ^15.0.0
         version: 15.0.0(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)
@@ -93,6 +96,9 @@ importers:
       isbot:
         specifier: ^5.1.17
         version: 5.1.17
+      modoru:
+        specifier: ^0.0.3
+        version: 0.0.3(react@18.3.1)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -3566,6 +3572,11 @@ packages:
 
   modern-ahocorasick@1.0.1:
     resolution: {integrity: sha512-yoe+JbhTClckZ67b2itRtistFKf8yPYelHLc7e5xAwtNAXxM6wJTUx2C7QeVSJFDzKT7bCIFyBVybPMKvmB9AA==}
+
+  modoru@0.0.3:
+    resolution: {integrity: sha512-HDGmgQYjzsX7GmsXifwP+zZN5ImnJQN2qq72vRr9e1rreIOok7n2YD2lHIBgUPf7Yl6T3xuZt2SnLgeonCtscw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -9041,6 +9052,14 @@ snapshots:
       ufo: 1.5.4
 
   modern-ahocorasick@1.0.1: {}
+
+  modoru@0.0.3(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+
+  modoru@0.0.3(react@19.0.0-rc-65a56d0e-20241020):
+    dependencies:
+      react: 19.0.0-rc-65a56d0e-20241020
 
   mri@1.2.0: {}
 
