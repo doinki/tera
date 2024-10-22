@@ -12,11 +12,15 @@ export default defineConfig(({ isSsrBuild }) => {
           : {
               // eslint-disable-next-line consistent-return
               manualChunks: (id) => {
-                if (id.includes('.pnpm/react@')) {
+                if (
+                  id.includes('.pnpm/react@') ||
+                  id.includes('.pnpm/react-dom@')
+                ) {
                   return 'react';
                 }
-                if (id.includes('.pnpm/react-dom@')) {
-                  return 'react-dom';
+
+                if (id.includes('.pnpm/@remix-run+')) {
+                  return 'remix';
                 }
               },
             },
