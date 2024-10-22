@@ -16,20 +16,23 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 RUN corepack enable pnpm && pnpm config set store-dir .pnpm && pnpm install --frozen-lockfile --offline
-RUN pnpm --filter remix build && pnpm --filter remix deploy --prod dist
+RUN pnpm --filter next build
 
 FROM base AS runner
 WORKDIR /app
 
 RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nodejs
 
-COPY --from=builder --chown=nodejs:nodejs /app/dist ./
+COPY --from=builder --chown=nodejs:nodejs /app/apps/tera-next/.next/standalone ./
+COPY --from=builder --chown=nodejs:nodejs /app/apps/tera-next/.next/static ./apps/tera-next/.next/static
+COPY --from=builder --chown=nodejs:nodejs /app/apps/tera-next/public ./apps/tera-next/public
 
 USER nodejs
 
-EXPOSE 3000
+EXPOSE 3010
 
 ENV NODE_ENV=production
 ENV HOSTNAME="0.0.0.0"
-ENV PORT=3000
-CMD node server/server.production.js
+ENV PORT=3010
+ENV NEXT_TELEMETRY_DISABLED=1
+CMD node apps/tera-next/server.js
