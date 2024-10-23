@@ -9,6 +9,9 @@ on:
       - packages/tera-ui/src/**
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
   docker:
     runs-on: ubuntu-latest
