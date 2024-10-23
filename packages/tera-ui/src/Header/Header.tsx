@@ -1,5 +1,6 @@
 import { Tera } from '@tera/icons';
 import { type ElementType } from 'react';
+import { twJoin } from 'tailwind-merge';
 
 import { ThemeSwitch } from '../ThemeSwitch';
 
@@ -11,12 +12,17 @@ export function Header(props: HeaderProps) {
   const { Link = 'a' } = props;
 
   return (
-    <header className="pointer-events-none sticky top-0 flex items-center justify-between p-4 *:pointer-events-auto md:p-6 lg:p-8">
-      <Link className="-m-2 p-2" href="/" title="Go to Home" to="/">
-        <Tera height={48} width={48} />
+    <header
+      className={twJoin(
+        'pointer-events-none sticky top-0 flex items-center justify-between border-b *:pointer-events-auto',
+        'px-4 py-1 md:px-6 md:py-2 lg:px-8',
+      )}
+    >
+      <Link className="-m-1 p-1" href="/" title="Go to Home" to="/">
+        <Tera height={32} width={32} />
         <span className="sr-only">Tera</span>
       </Link>
-      <ThemeSwitch className="size-8" />
+      <ThemeSwitch className="size-6" />
     </header>
   );
 }

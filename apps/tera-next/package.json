@@ -11,13 +11,13 @@
   "dependencies": {
     "@tera/ui": "workspace:^",
     "modoru": "^0.0.3",
-    "next": "^15.0.0",
-    "react": "19.0.0-rc-65a56d0e-20241020",
-    "react-dom": "19.0.0-rc-65a56d0e-20241020",
+    "next": "^15.0.1",
+    "react": "19.0.0-rc-69d4b800-20241021",
+    "react-dom": "19.0.0-rc-69d4b800-20241021",
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
-    "@types/react": "^18.3.11",
+    "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "postcss": "^8.4.47",
     "postcss-preset-env": "^10.0.7",
