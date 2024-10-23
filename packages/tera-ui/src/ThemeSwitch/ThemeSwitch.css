@@ -1,9 +1,6 @@
 .theme-switch {
   -webkit-tap-highlight-color: transparent;
-  border-radius: 9999px;
   box-sizing: content-box;
-  margin: -0.5rem;
-  padding: 0.5rem;
 }
 
 .sun,

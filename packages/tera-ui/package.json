@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@mado/hooks": "^0.4.0",
+    "@radix-ui/react-slot": "^1.1.0",
     "@tera/icons": "workspace:^",
     "tailwind-merge": "^2.5.4"
   },

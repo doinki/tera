@@ -10,6 +10,8 @@
 
     color: black;
     background-color: white;
+
+    @apply min-w-[320px];
   }
 
   html.dark {

@@ -1,6 +1,8 @@
 import { GitHub } from '@tera/icons';
 import { twJoin } from 'tailwind-merge';
 
+import { IconButton } from '../IconButton';
+
 export interface FooterProps {
   className?: string;
 }
@@ -17,14 +19,16 @@ export function Footer({ className }: FooterProps) {
         &copy; {new Date().getFullYear()} doinki. All rights reserved.
       </cite>
 
-      <a
-        aria-label="GitHub"
-        href="https://github.com/doinki/tera"
-        rel="noreferrer"
-        target="_blank"
-      >
-        <GitHub className="dark:fill-white" />
-      </a>
+      <IconButton asChild>
+        <a
+          aria-label="GitHub"
+          href="https://github.com/doinki/tera"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <GitHub className="dark:fill-white" />
+        </a>
+      </IconButton>
     </footer>
   );
 }

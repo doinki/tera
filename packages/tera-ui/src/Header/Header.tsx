@@ -1,7 +1,8 @@
-import { Tera } from '@tera/icons';
+import { GitHub, Tera } from '@tera/icons';
 import { type ElementType } from 'react';
 import { twJoin } from 'tailwind-merge';
 
+import { IconButton } from '../IconButton';
 import { ThemeSwitch } from '../ThemeSwitch';
 
 export interface HeaderProps {
@@ -18,11 +19,26 @@ export function Header(props: HeaderProps) {
         'px-4 py-1 md:px-6 md:py-2 lg:px-8 lg:py-4',
       )}
     >
-      <Link className="-m-1 p-1" href="/" title="Go to Home" to="/">
-        <Tera height={32} width={32} />
+      <Link href="/" title="Go to Home" to="/">
+        <Tera height={40} width={40} />
         <span className="sr-only">Tera</span>
       </Link>
-      <ThemeSwitch className="size-6" />
+
+      <div className="inline-flex items-center gap-4 md:gap-6">
+        <IconButton asChild>
+          <ThemeSwitch className="size-6" />
+        </IconButton>
+        <IconButton asChild>
+          <a
+            aria-label="GitHub"
+            href="https://github.com/doinki/tera"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <GitHub className="size-6 dark:fill-white" />
+          </a>
+        </IconButton>
+      </div>
     </header>
   );
 }
