@@ -20,5 +20,5 @@ jobs:
           file: ./apps/tera-next/Dockerfile
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/tera:next
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=gha,scope=tera-next
+          cache-to: type=gha,scope=tera-next,mode=max

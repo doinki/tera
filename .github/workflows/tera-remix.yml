@@ -20,5 +20,5 @@ jobs:
           file: ./apps/tera-remix/Dockerfile
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/tera:remix
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=gha,scope=tera-remix
+          cache-to: type=gha,scope=tera-remix,mode=max
