@@ -5,6 +5,19 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  async headers() {
+    return [
+      {
+        headers: [
+          {
+            key: 'X-Accel-Buffering',
+            value: 'no',
+          },
+        ],
+        source: '/:path*{/}?',
+      },
+    ];
+  },
   output: 'standalone',
   poweredByHeader: false,
 };
