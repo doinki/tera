@@ -4,9 +4,20 @@
 
 @layer base {
   html {
+    --border-color: black;
+
     color-scheme: light;
+
+    color: black;
+    background-color: white;
   }
+
   html.dark {
+    --border-color: white;
+
     color-scheme: dark;
+
+    color: white;
+    background-color: black;
   }
 }
