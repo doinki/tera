@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  expireTime: 5 * 60,
   async headers() {
     return [
       {
