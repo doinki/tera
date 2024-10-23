@@ -1,4 +1,4 @@
-name: Tera Remix
+name: Tera Next
 
 on:
   push:
@@ -17,8 +17,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - uses: docker/build-push-action@v6
         with:
-          file: ./apps/tera-remix/Dockerfile
+          file: ./apps/tera-next/Dockerfile
           push: true
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/tera:remix
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/tera:next
           cache-from: type=gha
           cache-to: type=gha,mode=max
