@@ -1,3 +1,4 @@
+import tailwindConfig from '@tera/ui/tailwind.config';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 
 /**
@@ -6,6 +7,7 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
 export default {
   content: ['../../packages/tera-ui/src/**/*.{ts,tsx}', './app/**/*.{ts,tsx}'],
   darkMode: 'class',
+  presets: [tailwindConfig],
   theme: {
     extend: {
       fontFamily: {
