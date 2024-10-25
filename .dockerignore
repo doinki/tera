@@ -1,10 +1,16 @@
+**/.next
 **/dist
 **/build
 **/node_modules
 **/Dockerfile
 **/LICENSE
+.changeset
+.github
+.husky
 .vscode
 .dockerignore
+.gitignore
+.lintstagedrc.json
 .nvmrc
 .prettierignore
 .prettierrc.json
