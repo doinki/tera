@@ -1,7 +1,7 @@
 {
   "name": "tera",
   "private": true,
-  "packageManager": "pnpm@9.12.2",
+  "packageManager": "pnpm@9.12.3",
   "scripts": {
     "build": "pnpm -r build",
     "lint": "pnpm -r lint",
@@ -10,7 +10,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.27.9",
     "@playwright/test": "^1.48.2",
-    "@types/node": "^22.8.0",
+    "@types/node": "^22.8.1",
     "eslint": "^8.57.1",
     "eslint-config-mado": "^0.4.2",
     "husky": "^9.1.6",
