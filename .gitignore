@@ -134,3 +134,8 @@ dist
 build
 *storybook.log
 
+# playwright
+blob-report
+playwright/.cache
+playwright-report
+test-results

@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.9",
+    "@playwright/test": "^1.48.2",
     "@types/node": "^22.8.0",
     "eslint": "^8.57.1",
     "eslint-config-mado": "^0.4.2",
